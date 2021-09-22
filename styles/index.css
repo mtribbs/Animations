@@ -14,14 +14,14 @@ body {
 .page-title {
     font-family: 'Philosopher', sans-serif;
     /* color: #F76201; */
-    color: #d98d5b;
+    color: peru;
     text-align: center;
     font-size: 48px;
 }
 
 .intro__title {
     font-family: 'Philosopher', sans-serif;
-    color: #d98d5b;
+    color: peru;
     font-size: 38px;
     text-align: center;
 }
@@ -35,7 +35,7 @@ body {
 
 .section__title {
     font-family: 'Philosopher', sans-serif;
-    color: #d98d5b;
+    color: peru;
     font-size: 28px;
     text-align: center;
 }
@@ -46,17 +46,18 @@ body {
     max-width: 900px;
 }
 
-/* .container {
+.container {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: baseline;
-} */
+}
 
 .card {
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
     perspective: 1000px;
+    margin: 50px;
 }
 
 .card-inner {
@@ -98,6 +99,11 @@ img {
 .img__text {
     max-width: 300px;
     font-family: 'Mulish', sans-serif;
+}
+
+.img-curl {
+    height: 350px;
+    width: auto;
 }
 
 animate__pulse
