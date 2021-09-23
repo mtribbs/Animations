@@ -13,7 +13,6 @@ body {
 
 .page-title {
     font-family: 'Philosopher', sans-serif;
-    /* color: #F76201; */
     color: peru;
     text-align: center;
     font-size: 48px;
@@ -47,6 +46,13 @@ button:hover {
 a:link {
     text-decoration: none;
     color: peru;
+    padding:10px; /*added padding so that you cannot hover over the button but not the link, due to effects*/
+}
+
+a:hover {
+    color:white;
+    transition: all 0.5s ease-in-out;
+    transition-delay: 0.2s;
 }
 
 a:visited {
@@ -91,39 +97,33 @@ a:visited {
 .card {
     width: 400px;
     height: 400px;
-    perspective: 1000px;
     margin: 50px;
 }
 
 .card-inner {
     position: relative;
     width: 100%;
-    height: 100%;
-    transition: all 1.2s ease-in-out;
+    height: 100%;    
     transform-style: preserve-3d;
 }
 
- .card-inner:hover {
-    transform: rotateY(180deg)
-}
-
 .card-front, .card-back {
-    position: absolute;
     width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
+    height: 100%;  
     background-color: #fffbf6;
     border: 1px solid peru;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    backface-visibility: hidden;
 }
 
 .card-back {
     color: peru;
     font-weight: bold;
     text-align: center;
-    transform: rotateY(180deg);
+    
 }
 
 img {
@@ -141,6 +141,63 @@ img {
     width: auto;
 }
 
-animate__pulse
+.card-a, .card-b, .card-c {
+    perspective: 1000px; /*not sure why this is needed, saw it in a walkthrough*/
+}
 
-    /* background-color: #fffbf6; */
+.card-a-inner {
+    transition: all 1.5s ease-in-out; 
+}
+
+.card-b-inner {
+    transition-delay: 0.2s;
+}
+
+ .card-a-inner:hover, .card-b-inner:hover {
+    transform: rotateY(180deg)
+}
+
+.card-a-back, .card-b-back {
+    transform: rotateY(180deg);
+}
+
+.card-c-inner:hover {
+    transform: rotateX(180deg);
+}
+
+.card-c-back {
+    transform: rotateX(180deg);
+}
+
+.card-c-inner {
+    transition: all 0.8s ease-in-out;
+}
+
+.card-d {
+    width: 400px;
+    height: 500px;
+    margin: 50px; 
+    background-color: #fffbf6;
+    border: 1px solid peru;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: flipper 10s ease-in-out infinite;
+    animation-direction: reverse;
+}
+
+@keyframes flipper {
+    0% {background-color:#fffbf6; color: peru;}
+    50% {background-color: peru; color: #fffbf6;}
+    100% {background-color:#fffbf6; color: peru;}
+    /* not a great effect for readability, just experimenting*/
+}
+
+.card-d:hover {
+    animation:none; /*did this instead of pause, so that it wouldn't pause in a place where you can't read the text*/
+    background-color: peru;
+    color: #fffbf6;
+}
+
+
